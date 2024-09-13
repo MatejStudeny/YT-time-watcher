@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Time Watcher",
+  "version": "1.0",
+  "description": "Alerts you when you've spent too much time on YouTube",
+  "permissions": [
+    "activeTab",
+    "alarms",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
